@@ -43,7 +43,7 @@ body {
   transition: transform .3s ease-in-out, box-shadow .3s ease-in-out;
 
   &__name {
-    font-size: 35px;
+    font-size: size(35, 18);
     font-weight: 700;
   }
 }

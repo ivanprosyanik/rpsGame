@@ -8,8 +8,8 @@
   margin-bottom: size(60, 20);
 
   &__offer {
-    max-width: 546px;
     margin: 0 auto;
+    max-width: 546px;
   }
 
   &__title {
@@ -29,6 +29,10 @@
     align-items: center;
     justify-content: center;
     gap: size(75, 30);
+
+    @include r($phone) {
+      flex-wrap: wrap;
+    }
   }
 
   &__item {
@@ -56,19 +60,22 @@
   }
 
   &__box {
-    min-height: 300px;
+    min-height: 0;
     opacity: 0;
     visibility: hidden;
-    transition: min-height .3s ease-in-out, opacity .5s ease-in-out, visibility .5s ease-in-out;
+    transform: translateY(-300px);
+    transition: min-height 1s ease-in-out, opacity .5s ease-in-out, visibility .5s ease-in-out;
   }
 
   &__box.active {
+    min-height: size(300, 215);
     opacity: 1;
     visibility: visible;
+    transform: translateY(0);
 
     .result__head {
-      width: 200px;
-      height: 200px;
+      width: size(200, 150);
+      height: size(200, 150);
     }
   }
 
@@ -84,9 +91,10 @@
   }
 
   &__text {
-    font-size: 30px;
+    font-size: size(30, 15);
     max-width: 503px;
     margin: 0 auto;
+
     span {
       font-weight: 700;
     }

@@ -15,15 +15,12 @@ function playGame(playerChoise) {
   let computerChoice = choise[Math.floor(Math.random() * choise.length)]
   if (computerChoice === playerChoise) {
     console.log(`This is Draw. Computer choised ${computerChoice}`);
-    // resultBox.insertAdjacentHTML('afterbegin', draw)
     clearRes(draw)
   } else if (choises[playerChoise] === computerChoice) {
     console.log(`This is WIN!!! Computer choised ${computerChoice}`);
-    // resultBox.insertAdjacentHTML('afterbegin', win)
     clearRes(win)
   } else {
     console.log(`You lose :( Computer choised ${computerChoice}`);
-    // resultBox.insertAdjacentHTML('afterbegin', lose)
     clearRes(lose)
   }
 }
@@ -31,15 +28,17 @@ function playGame(playerChoise) {
 function clearRes(res) {
   resultBox.innerHTML = ''
   resultBox.classList.remove('active');
+  resultBox.scrollTo({ top: 0, behavior: 'auto' });
   setTimeout(() => {
     resultBox.insertAdjacentHTML('afterbegin', res)
     resultBox.classList.add('active')
-  }, 400)
+    resultBox.scrollIntoView({ behavior: 'smooth' });
+  }, 1000)
 }
 
 const win = `
 <div class="result__head" style="background-image: url('img/cup.svg');"></div>
-<p class="result__text"><span>Вы выиграли!</span> Поздравляю</p>
+<p class="result__text"><span>Вы выиграли!</span> Поздравляю!</p>
 `;
 
 const draw = `
@@ -49,7 +48,7 @@ const draw = `
 
 const lose = `
 <div class="result__head" style="background-image: url('img/lose.svg');"></div>
-<p class="result__text">К сожалению, <span>Вы проиграли.</span> Ну ничего, повезет в другой раз </p>
+<p class="result__text">К сожалению, <span>Вы проиграли.</span> <br> Ну ничего, повезет в другой раз </p>
 `;
 
 btnRock.addEventListener('click', () => {
@@ -67,5 +66,3 @@ btnScissors.addEventListener('click', () => {
   // resultBox.classList.add('active')
   playGame(playerChoise)
 });
-
-
