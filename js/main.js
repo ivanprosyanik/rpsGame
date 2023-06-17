@@ -9,6 +9,7 @@ const btnPaper = document.getElementById('paper-btn');
 const btnScissors = document.getElementById('scissors-btn');
 
 const resultBox = document.querySelector('.result__box');
+const enemyBox = document.querySelector('enemy__box')
 
 function playGame(playerChoise) {
   const choise = ['rock', 'paper', 'scissors'];
@@ -50,6 +51,11 @@ const lose = `
 <div class="result__head" style="background-image: url('img/lose.svg');"></div>
 <p class="result__text">К сожалению, <span>Вы проиграли.</span> <br> Ну ничего, повезет в другой раз </p>
 `;
+
+const pcRock = `
+<article class="header__card card" style="background-image: url('img/rock.svg');"></article>
+<span class="card__name">Камень</span>
+`
 
 btnRock.addEventListener('click', () => {
   let playerChoise = 'rock';

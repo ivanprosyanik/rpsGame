@@ -59,6 +59,13 @@
     margin-bottom: 35px;
   }
 
+  &__inner,
+  &__text-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
   &__box {
     min-height: 0;
     opacity: 0;
