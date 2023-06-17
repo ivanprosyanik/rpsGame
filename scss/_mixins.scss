@@ -1,0 +1,19 @@
+@function size($max, $min, $wmax: 1600, $wmin: 375) {
+  $size: calc(#{$min}px + (#{$max} - #{$min}) * ((100vw - #{$wmin}px) / (#{$wmax} - #{$wmin})));
+  @return $size;
+}
+
+@mixin r($width) {
+  @media (max-width: #{$width}px) {
+    @content;
+  }
+}
+
+@mixin font-face($font-name, $font-path, $font-weight: normal, $font-style: normal) {
+  @font-face {
+    font-family: #{$font-name};
+    src: url('#{$font-path}.woff2') format('woff2');
+    font-weight: $font-weight;
+    font-style: $font-style;
+  }
+}

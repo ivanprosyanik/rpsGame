@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.min.css">
+  <title>Rock, Paper, Scissors</title>
+</head>
+
+<body>
+  <div class="wrapper">
+    <header class="header">
+      <div class="container">
+        <div class="header__offer">
+          <h1 class="header__title">
+            Добро пожаловать в игру
+            <span>Rock, Paper, Scissors</span>
+          </h1>
+        </div>
+        <p class="header__text text">Выберите за “кого” вы будете играть:</p>
+        <ul class="header__list">
+          <li class="header__item">
+            <a class="header__button header__button--rock button" id="rock-btn">
+              <article class="header__card card" style="background-image: url('img/rock.svg');"></article>
+              <span class="card__name">Камень</span>
+            </a>
+          </li>
+          <li class="header__item">
+            <a class="header__button header__button--rock button" id="scissors-btn">
+              <article class="header__card card" style="background-image: url('img/scissors.svg');"></article>
+              <span class="card__name">Ножницы</span>
+            </a>
+          </li>
+          <li class="header__item">
+            <a class="header__button header__button--rock button" id="paper-btn">
+              <article class="header__card card" style="background-image: url('img/paper.svg');"></article>
+              <span class="card__name">Бумага</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </header>
+    <section class="result">
+      <div class="container">
+        <p class="text">Результат игры:</p>
+        <div class="result__box">
+
+        </div>
+      </div>
+    </section>
+  </div>
+
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>
