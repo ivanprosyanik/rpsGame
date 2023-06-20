@@ -55,15 +55,22 @@
 }
 
 .result {
-  .text {
-    margin-bottom: 35px;
+  &__inner {
+    display: flex;
+    justify-content: space-between;
   }
 
-  &__inner,
   &__text-box {
     display: flex;
-    align-items: center;
     justify-content: space-between;
+
+    @include r($phone) {
+      display: block;
+    }
+  }
+
+  .text {
+    margin-bottom: 35px;
   }
 
   &__box {
@@ -75,14 +82,14 @@
   }
 
   &__box.active {
-    min-height: size(300, 215);
+    min-height: size(300, 200);
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
 
     .result__head {
-      width: size(200, 150);
-      height: size(200, 150);
+      width: size(150, 100);
+      height: size(150, 100);
     }
   }
 
@@ -99,11 +106,19 @@
 
   &__text {
     font-size: size(30, 15);
-    max-width: 503px;
+    max-width: 345px;
     margin: 0 auto;
 
     span {
       font-weight: 700;
+    }
+  }
+
+  &__enemy {
+    .header__card {
+      width: size(150, 100);
+      height: size(150, 100);
+      background-size: size(105, 80);
     }
   }
 }
